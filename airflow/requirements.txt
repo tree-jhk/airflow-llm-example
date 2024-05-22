@@ -1,0 +1,8 @@
+typing-extensions==4.7.1
+openai==1.2
+python-dotenv
+# chromadb==0.3.29
+pydantic==1.10.9
+spacy
+pendulum==2.1.2
+chromadb-client
