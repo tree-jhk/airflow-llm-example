@@ -1,0 +1,31 @@
+👨🏻‍💻BASE Session👩🏻‍💻
+* 3월 6일
+Apache Hadoop 개념 설명 및 실습 구현이 진행되었습니다.
+- Apache Hadoop 개념 설명 (22기 분석 이혜승님)
+- Apache Hadoop 실습 구현 (22기 분석 이하윤님)
+
+* 3월 13일
+Spark RDD, DataFrame, 그리고 SQL 개념설명 및 실습이 진행되었습니다.
+- Spark RDD, DataFrame, SQL 개념설명 및 실습 진행 (22기 엔지니어링 최지혁님)
+
+* 3월 20일
+Spark Steaming 개념 설명 및 실습 진행, 그리고 퀴즈 QnA가 진행되었습니다.
+- Spark Steaming 개념 설명 및 실습 진행 (22기 분석 김도환님)
+
+* 3월 27일
+SparkML, MLflow 개념 및 원리 설명, 그리고 MLflow 실습이 진행되었습니다.
+- SparkML, MLflow 개념 설명 및 실습 진행 (20기 엔지니어링 최윤서님)
+
+* 4월 3일
+Kafka 배경, 구성요소, 그리고 KRaft 개념 및 주키퍼 모드와의 비교, KRaft 실습이 진행되었습니다.
+- Kafka 개념 설명 및 KRaft 실습 진행 (22기 엔지니어링 노명은님)
+
+* 4월 10일
+Kafka streams와 streamsDSL 이론, 배경, 구성요소, Kafka connect 개념 설명 및 실습이 진행되었습니다.
+- Kafka streams와 streamsDSL 이론, 배경, 구성요소 설명 (22기 엔지니어링 유태혁님)
+- Kafka connect 개념 설명 및 실습 진행 (22기 엔지니어링 한상진님)
+
+👨🏻‍💻ADV Session👩🏻‍💻
+3, 4월 ADV 세션은 현행 ADV 기수 분들의 팀 프로젝트로 진행되었습니다.
+
+- 팀 LP (21기 엔지니어링 윤건우, 이선의, 황혜정, 이수민)
