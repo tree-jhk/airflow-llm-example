@@ -6,6 +6,7 @@ from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 import os
 import warnings
+import random
 from utils import extract_text, embed_texts, store_embeddings, store_embedding
 from chromadb.config import Settings
 import chromadb
@@ -25,15 +26,21 @@ def set_chromadb_collection():
     return vectorDB
 
 def extract_texts_task_callable(**kwargs):
-    dir_path = os.path.join(os.path.dirname(__file__), '../data') # 텍스트 파일이 위치한 디렉토리 경로
-    return extract_text(dir_path, **kwargs)
+    if random.random() < 0.2:  # 20% 확률로 예외 발생
+        raise Exception("Random failure occurred in extract_texts_task_callable")
+    else:
+        dir_path = os.path.join(os.path.dirname(__file__), '../data') # 텍스트 파일이 위치한 디렉토리 경로
+        return extract_text(dir_path, **kwargs)
 
 def embed_texts_task_callable(**kwargs):
-    ti = kwargs['ti']
-    documents = ti.xcom_pull(task_ids='extract_texts')
-    embedded_documents = embed_texts(documents)
-    ti.xcom_push(key='embedded_documents', value=embedded_documents)
-    return embedded_documents
+    if random.random() < 0.2:  # 20% 확률로 예외 발생
+        raise Exception("Random failure occurred in embed_texts_task_callable")
+    else:
+        ti = kwargs['ti']
+        documents = ti.xcom_pull(task_ids='extract_texts')
+        embedded_documents = embed_texts(documents)
+        ti.xcom_push(key='embedded_documents', value=embedded_documents)
+        return embedded_documents
 
 def store_embedding_task_callable(**kwargs):
     ti = kwargs['ti']
@@ -48,7 +55,7 @@ def store_embedding_task_callable(**kwargs):
 default_args = {
     'depends_on_past': False,
     'start_date': datetime(2023, 1, 1),
-    'retries': 1,
+    'retries': 5,
     'retry_delay': timedelta(seconds=10),
 }
 
