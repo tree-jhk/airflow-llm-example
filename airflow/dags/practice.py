@@ -55,7 +55,7 @@ def store_embedding_task_callable(**kwargs):
 default_args = {
     'depends_on_past': False,
     'start_date': datetime(2023, 1, 1),
-    'retries': 5,
+    'retries': 0,
     'retry_delay': timedelta(seconds=10),
 }
 
@@ -74,7 +74,7 @@ vectorDB = set_chromadb_collection()
 extract_texts_task = PythonOperator(
     task_id='extract_texts',
     provide_context=True,  # DAG 실행 컨텍스트를 함수에 전달
-    python_callable=extract_texts_task_callable,
+    python_callable=???,
     dag=dag,
 )
 
@@ -82,7 +82,7 @@ extract_texts_task = PythonOperator(
 embed_texts_task = PythonOperator(
     task_id='embed_texts',
     provide_context=True,  # DAG 실행 컨텍스트를 함수에 전달
-    python_callable=embed_texts_task_callable,
+    python_callable=???,
     dag=dag,
 )
 
@@ -90,10 +90,10 @@ embed_texts_task = PythonOperator(
 store_embedding_task = PythonOperator(
     task_id='store_embedding',
     provide_context=True,  # DAG 실행 컨텍스트를 함수에 전달
-    python_callable=store_embedding_task_callable,
+    python_callable=???,
     op_kwargs={'vectorDB': vectorDB},  # vectorDB를 함수 인자로 전달
     dag=dag,
 )
 
 # Task Dependencies
-extract_texts_task >> embed_texts_task >> store_embedding_task
+??? >> ??? >> ???
